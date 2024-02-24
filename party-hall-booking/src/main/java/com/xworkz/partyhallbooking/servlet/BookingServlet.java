@@ -9,45 +9,54 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet(urlPatterns="/submit")
-
+@WebServlet(urlPatterns="/save")
 public class BookingServlet extends GenericServlet {
 
 	 
 	public BookingServlet() {
 		System.out.println("servlet constructor");
 	}
+	
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws IOException {
 		System.out.println("this is service method");
-		String name=req.getParameter("username");
-		System.out.println("enter name:"+name);
+		String username=req.getParameter("username");
+		System.out.println("enter name:"+username);
 		
-		String name1=req.getParameter("email");
-		System.out.println("enter email:"+name1);
+		String email=req.getParameter("email");
+		System.out.println("enter email:"+email);
 		
-		String name3=req.getParameter("contact");
-		System.out.println("enter contact:"+name3);
+		String contact=req.getParameter("contact");
+		System.out.println("enter contact:"+contact);
 		
-		String name4=req.getParameter("alternateConact");
-		System.out.println("enter alternat contact:"+name4);
+		String alter=req.getParameter("alternateConact");
+		System.out.println("enter alternat contact:"+alter);
 		
-		String name5=req.getParameter("time");
-		System.out.println("enter time:"+name5);
+		String time=req.getParameter("time");
+		System.out.println("enter time:"+time);
 		
-		String name6=req.getParameter("amount");
-		System.out.println("enter time:"+name6);
+		String amount=req.getParameter("amount");
+		System.out.println("enter amount:"+amount);
 		
-		String name7=req.getParameter("place");
-		System.out.println("enter time:"+name7);
+		String place=req.getParameter("place");
+		System.out.println("enter place name:"+place);
 		
-		String name8=req.getParameter("noofpeople");
-		System.out.println("enter time:"+name8);
+		String people=req.getParameter("noofpeople");
+		System.out.println("enter no of peole:"+people);
 		
 	 req.getContentType();
 	 res.setContentType("html");
 	 PrintWriter printWriter=res.getWriter();
-	 printWriter.print("<h1>"+"Thanks for Booking"+"</h1>");
+	 printWriter.print("<h1 align="+"center"+">"+"Thanks for Booking"+"</h1>");
+	 printWriter.print("<h2 align=\"center\">"+username);
+	 printWriter.print("<br>"+email);
+	 printWriter.print("<br>"+contact);
+	 printWriter.print("<br>"+alter);
+	 printWriter.print("<br>"+time);
+	 printWriter.print("<br>"+amount);
+	 printWriter.print("<br>"+place);
+	 printWriter.print("<br>"+people);
+	 
 	 printWriter.close();
 		
 		
